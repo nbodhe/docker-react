@@ -4,4 +4,4 @@ services:
 before_install:
     - docker build -f Dockerfile.dev -t travisapp .
 script:
-    - docker run travisapp npm run test -- --coverage
+    - docker run -e CI=true travisapp npm run test -- --coverage
